@@ -5,24 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shubham - Online Fitness Coach</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background-color: #000; color: #fff; }
+        
         header { 
-            background-image: url('fitness-website-background.jpg');
+            background-image: url('fitness-background.jpg');
             background-size: cover;
             background-position: center;
             color: #fff; 
             text-align: center; 
             padding: 100px 20px; 
+            position: relative;
+        }
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        .header-content {
+            position: relative;
+            z-index: 1;
         }
         .header-content h1 { font-size: 2.5em; }
         .header-content p { font-size: 1.2em; margin-bottom: 20px; }
+        
         .section { padding: 40px 20px; text-align: center; }
         .section h2 { margin-bottom: 10px; }
-        .btn { background-color: #ff4d4d; color: #fff; padding: 8px 16px; text-decoration: none; border-radius: 5px; font-size: 0.9em; }
-        .packages, .reviews, .transformations { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .card { border: 1px solid #ddd; padding: 20px; border-radius: 5px; max-width: 300px; }
-        .footer { background-color: #000; color: #fff; text-align: center; padding: 10px; }
-        .photo-gallery img { width: 100%; border-radius: 5px; margin-bottom: 10px; }
+        
+        .btn { 
+            background-color: #ff4d4d; 
+            color: #fff; 
+            padding: 12px 24px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        .btn:hover { background-color: #ff1a1a; }
+
+        .packages, .reviews, .transformations, .photo-gallery {
+            display: flex; 
+            justify-content: center; 
+            gap: 20px; 
+            flex-wrap: wrap;
+        }
+        .card { 
+            border: 1px solid #333; 
+            background-color: #111; 
+            padding: 20px; 
+            border-radius: 5px; 
+            max-width: 300px;
+        }
+        .card img { width: 100%; border-radius: 5px; margin-bottom: 10px; }
+
+        .footer { 
+            background-color: #111; 
+            color: #fff; 
+            text-align: center; 
+            padding: 20px; 
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 60px 20px; }
+            .header-content h1 { font-size: 2em; }
+            .header-content p { font-size: 1em; }
+            .btn { padding: 10px 20px; font-size: 0.9em; }
+        }
     </style>
 </head>
 <body>
@@ -59,13 +108,22 @@
     <h2>Before & After Transformations</h2>
     <div class="transformations">
         <div class="card">
-            <img src="my-transformation-before.jpg" width="100%">
+            <img src="my-transformation-before.jpg">
             <p>My Before Transformation</p>
         </div>
         <div class="card">
-            <img src="my-transformation-after.jpg" width="100%">
+            <img src="my-transformation-after.jpg">
             <p>My After Transformation</p>
         </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>My Photoshoots</h2>
+    <div class="photo-gallery">
+        <img src="photoshoot1.jpg">
+        <img src="photoshoot2.jpg">
+        <img src="photoshoot3.jpg">
     </div>
 </section>
 
